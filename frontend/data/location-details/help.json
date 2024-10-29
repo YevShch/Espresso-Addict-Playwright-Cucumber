@@ -1,0 +1,10 @@
+{
+  "image": "help",
+  "description": "You're a hipster. And you love iThings and your cool bag. But right now you're almost broke. And that's bad. Because you're an Espresso Addict too, a caffeine junkie. You need your fix: 5 cups of espresso. Otherwise you will soon start to feel really shaky! So go get your fix... Lurk around and wait for opportunities!",
+  "choices": {
+    "Continue": {
+      "goback": true
+    }
+  },
+  "infopage": true
+}

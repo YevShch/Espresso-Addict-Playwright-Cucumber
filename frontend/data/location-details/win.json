@@ -1,0 +1,10 @@
+{
+  "image": "win",
+  "description": "Yes! You feel alive and pumping. Full of caffeine! You feel like... like... Luke Skywalker!",
+  "choices": {
+    "Play again": {
+      "reload": true
+    }
+  },
+  "infopage": true
+}

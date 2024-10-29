@@ -1,0 +1,10 @@
+{
+  "image": "dead",
+  "description": "You health has deteriorated too much - you feel almost dead.<br>Find a caffeine-detox clinic?",
+  "choices": {
+    "Play again": {
+      "reload": true
+    }
+  },
+  "infopage": true
+}

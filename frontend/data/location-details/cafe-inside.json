@@ -1,0 +1,38 @@
+{
+  "image": "inside-cafe",
+  "description": "You are in the Cloud Forest Cafe. People are reading, talking and drinking coffee. Mmm... Coffee... The barrista says:<br>\"How about an espresso? It's only $5.\"",
+  "choices": {
+    "Exit the cafe": {
+      "goto": "cafe"
+    },
+    "Give beer to barista": {
+      "if in bag": "a can of beer",
+      "if has happened": "barista overheard",
+      "description": "You give the can of beer to the barista. \"For me.. Wow! Thanks!\" He pours you a double espresso. \"It's on the house!\"",
+      "espressocups": 2,
+      "health": 20
+    },
+    "Buy an espresso" : {
+      "description" : "Ah! You buy an espresso. It's steaming hot! It's perfection! It's...gone!<br>You old addict!",
+      "if money": 5,
+      "espressocups": 1,
+      "health": 10,
+      "money": -5
+    },
+    "Wait": [
+      {
+        "description": "You wait. The barista looks at you.",
+        "health": -3
+      },
+      {
+        "description": "You wait. The barista says: You look like you could use some Java..."
+      },
+      {
+        "image": "inside-cafe-barista-phone",
+        "description": "The barista is in a dark corner phoning a friend. You overhear parts of the conversion: \"I'm tired of pushing coffee. I just want a beer, but I'm stuck here for like 5 more hours... Man, I tell you if someone would just bring me a beer...\"",
+        "happening": "barista overheard",
+        "show only once": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "image": "bar",
+  "description": "You are in a crowded bar where everyone is friendly. But no coffee in sight. Everyone's drinking beer.",
+  "choices": {
+    "Wait": [
+      {
+        "description": "You wait. Beer, beer, beer.... You don't care...",
+        "health": -3
+      },
+      {
+        "description": "It's kind of nice here. But no coffee..."
+      },
+      {
+        "description": "The bartender offers you a can of beer for free... \"Come on... Get in to the groove... You can pay me for the next one!\"",
+        "gift": "a can of beer",
+        "show only once": true
+      }
+    ]
+  }
+}

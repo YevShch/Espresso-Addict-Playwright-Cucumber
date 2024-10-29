@@ -1,0 +1,44 @@
+/*------------------------------------------------------------------------------------------
+  Fullscreen adjustments
+  Note: Can not be written as combined rules (with ,) then they do not work
+------------------------------------------------------------------------------------------*/
+
+:-webkit-full-screen .go-fullscreen {
+  display: none;
+}
+
+:-moz-full-screen .go-fullscreen {
+  display: none;
+}
+
+:-ms-full-screen .go-fullscreen {
+  display: none;
+}
+
+:full-screen .go-fullscreen {
+  display: none;
+}
+
+:fullscreen .go-fullscreen {
+  display: none;
+}
+
+:-webkit-full-screen header {
+  margin-top: 60px;
+}
+
+:-moz-full-screen .go-fullscreen {
+  margin-top: 60px;
+}
+
+:-ms-full-screen .go-fullscreen {
+  margin-top: 60px;
+}
+
+:full-screen .go-fullscreen {
+  margin-top: 60px;
+}
+
+:fullscreen .go-fullscreen {
+  margin-top: 60px;
+}

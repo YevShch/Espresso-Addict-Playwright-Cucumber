@@ -1,0 +1,22 @@
+/*------------------------------------------------------------------------------------------
+  Main element with image and descriptions
+------------------------------------------------------------------------------------------*/
+
+main {
+  /* IE thinks main is inline */
+  display: block;
+}
+
+.big-image {
+  margin: 10px auto 0;
+  width: 50%;
+  display: block;
+  border-radius: 10px;
+}
+
+.description {
+  font-family: 'Protest Strike';
+  width: 50%;
+  margin: 20px auto 0;
+  text-align: center;
+}

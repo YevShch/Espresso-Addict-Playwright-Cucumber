@@ -1,0 +1,13 @@
+/*------------------------------------------------------------------------------------------
+  Load/import all css files
+------------------------------------------------------------------------------------------*/
+
+@import url('//fonts.googleapis.com/css2?family=Protest+Riot&family=Protest+Strike&display=swap');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+@import url('body-and-header.css');
+@import url('bag.css');
+@import url('progress-bars.css');
+@import url('main.css');
+@import url('footer-and-menu.css');
+@import url('fullscreen-button.css');
+@import url('fullscreen-adjustments.css');

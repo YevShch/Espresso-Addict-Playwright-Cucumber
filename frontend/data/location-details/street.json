@@ -1,0 +1,15 @@
+{
+  "image": "street",
+  "description": "You are on an empty street. Not much action around here.",
+  "choices": {
+    "Wait": [
+      {
+        "description": "You sharpen your ears. You hear people laughing and buzzing to the east? Could it be a cafe?"
+      },
+      {
+        "description": "You feel so tired. Why can't coffee be free and abundant? Where have all the 'spressos gone?",
+        "health": -5
+      }
+    ]
+  }
+}

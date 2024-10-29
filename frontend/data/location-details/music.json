@@ -1,0 +1,28 @@
+{
+  "image": "music-scene",
+  "description": "A guitarist and sax player make some funky noise.<br>The guitarist doesn't sing too well though.",
+  "choices": {
+    "Jam with the band": {
+      "if has happened": "offered to jam",
+      "description": "You enter the stage and sing \"Oh lord won't you buy me... An Espresso machine\". Someone in the audience throws you a fiver.",
+      "money": 5,
+      "show only once": true
+    },
+    "Wait": [
+      {
+        "description": "You wait. The music is getting boring. You long for a coffee.",
+        "health": -10
+      },
+      {
+        "description": "You wait. Music without espresso... Life is hard.",
+        "health": -5
+      },
+      {
+        "description": "The guitarist shouts out to you: \"You look like a hip kid, why don't come on up and jam with us?\"",
+        "health": -5,
+        "show only once": true,
+        "happening": "offered to jam"
+      }
+    ]
+  }
+}

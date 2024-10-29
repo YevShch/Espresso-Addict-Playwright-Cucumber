@@ -1,0 +1,19 @@
+{
+  "image": "cloud-forest-cafe",
+  "description": "You are standing outside the Cloud Forest Cafe. The sun is shining.",
+  "choices": {
+    "Enter the cafe": {
+      "goto": "cafe-inside"
+    },
+    "Wait": [
+      {
+        "description": "You wait. The sun is burning your skin. You long for a coffee.",
+        "health": -10
+      },
+      {
+        "description": "You wait. In the sun without Java... Life is hard.",
+        "health": -5
+      }
+    ]
+  }
+}

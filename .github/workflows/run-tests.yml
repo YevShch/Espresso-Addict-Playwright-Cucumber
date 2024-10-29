@@ -1,0 +1,83 @@
+name: Node.js CI
+
+# Trigger which git action (push, pull_request)
+# in which branch(es) should start the jobs...
+on:
+  push:
+    branches: [main, playwright, playwright-and-selenium]
+  pull_request:
+    branches: [main, playwright, playwright-and-selenium]
+  # add branch-protection-rules in github for main (require pull-request)
+  # then add another branch and try to make a pull-request in github
+  # to merge your branch into main:
+  # - the following will happens: these tests will run
+  # - and a report of success/failure will be shown to the person
+  #   approving the pull request
+
+# jobs to run
+jobs:
+  # End to end testing of Espresso Addict
+  E-Addict-e2e:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      # run test in different browsers using matrix
+      matrix:
+        test-version: ["chromium", "firefox", "webkit", 'chrome-with-selenium']
+
+    steps:
+
+    - name: Checkout repository
+      # action from github marketplace, actions
+      # checkout this repo on the server
+      uses: actions/checkout@v4
+
+    - name: Use Node.js
+      # action from github marketplace, actions
+      # install Node.js
+      uses: actions/setup-node@v4
+      with:
+        cache: 'npm'
+
+    - name: Get installed Playwright version
+      # Get the installed Playwright version and use as a cache key, PLAYWRIGHT_VERSION
+      # see: https://playwrightsolutions.com/playwright-github-action-to-cache-the-browser-binaries/
+      id: playwright-version
+      run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./package-lock.json').dependencies['@playwright/test'].version)")" >> $GITHUB_ENV
+    
+    - name: Cache playwright binaries
+      # Cache the playwright binaries and npm dependencies based on the cache key PLAYWRIGHT_VERSION
+      uses: actions/cache@v4
+      id: playwright-cache
+      with:
+        path: |
+          ~/.cache/ms-playwright
+        key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
+    - run: npm ci
+    - run: npx playwright install --with-deps
+      if: steps.playwright-cache.outputs.cache-hit != 'true'
+    - run: npx playwright install-deps
+      if: steps.playwright-cache.outputs.cache-hit != 'true'
+      
+      # Some WebKit dependencies seem to lay outside the cache and will need to be installed separately
+      # for now we don't cache that (since we are not sure where they are installed)
+      # see the following issue: https://github.com/microsoft/playwright/issues/30538
+    - run: npx playwright install-deps webkit
+      if: ${{ matrix.test-version== 'webkit' && steps.playwright-cache.outputs.cache-hit == 'true' }}
+        
+    # Run a build if needed, start the app and then run the tests
+
+      # if the project has a npm run build command
+      # then runs (not needed right now but keep)
+    - run: npm run build --if-present
+      # start the web server (without hanging the terminal)
+      # note nohup does NOT work with the npm command,
+      # so run using the node command instead
+    - run: nohup node index.js &
+      # run whatever is specified in package.json
+      # for the script test
+    - run: npm run test-${{matrix.test-version}}
+      # make sure to run with colored output
+      env:
+        FORCE_COLOR: 2

@@ -1,0 +1,15 @@
+{
+  "image": "country-side",
+  "description": "You walk and walk. Now you're out in the contry-side. Just great. No coffee here...",
+  "choices": {
+    "Wait": [
+      {
+        "description": "You wait. You here music coming from the west. Some kind of festival? Out here?"
+      },
+      {
+        "description": "You stand around for a while... You feel so tired. Clearly not enough coffee.",
+        "health": -5
+      }
+    ]
+  }
+}

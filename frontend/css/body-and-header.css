@@ -1,0 +1,32 @@
+/*------------------------------------------------------------------------------------------
+  Body and header, basic rules
+------------------------------------------------------------------------------------------*/
+
+body {
+  font: 22px/150% 'Protest Riot', cursive;
+  background: #000;
+  color: #eee;
+  height: 100%;
+}
+
+header {
+  margin-top: 20px;
+  text-align: center;
+}
+
+header section {
+  width: 33%;
+  font-size: 20px;
+  text-align: center;
+  float: left;
+}
+
+header article {
+  width: 50%;
+  display: inline-block;
+  overflow: auto;
+}
+
+i {
+  padding-right: 10px;
+}

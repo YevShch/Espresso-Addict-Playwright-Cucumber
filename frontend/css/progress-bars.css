@@ -1,0 +1,36 @@
+/*------------------------------------------------------------------------------------------
+  Progress bars
+------------------------------------------------------------------------------------------*/
+
+.progress {
+  height: 25px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  margin-right: 20px;
+  width: 90%;
+  margin: 0 5%;
+}
+
+.progress div {
+  height: 25px;
+  border-radius: 3px;
+  white-space: nowrap
+}
+
+.progress div span {
+  margin-left: 8px;
+  margin-top: -3px;
+  position: absolute;
+}
+
+.good span {
+  margin-left: -8px !important;
+}
+
+.progress .good {
+  background: #3a3;
+}
+
+.progress .bad {
+  background: #b66;
+}

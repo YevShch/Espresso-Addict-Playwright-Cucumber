@@ -1,0 +1,21 @@
+/*------------------------------------------------------------------------------------------
+  The bag
+------------------------------------------------------------------------------------------*/
+
+header .bag {
+  margin-top: 20px;
+  width: 95%;
+  font-size: 22px;
+  display: inline-block;
+  text-align: left;
+  float: none;
+}
+
+header .bag-content span {
+  background: #3c5f85;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 5px 8px 3px 5px;
+  line-height: 100%;
+  margin-left: 10px;
+}
