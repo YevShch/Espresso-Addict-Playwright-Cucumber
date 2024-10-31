@@ -2,42 +2,12 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import { checkIfDescriptionContainsString, getWhereIAm, getMenuChoiceElement } from './helpers.js'
 import { expect } from 'chai';
 
-// Given('that I have started the game by navigating to {string}', async function(a){
-//   // TODO: implement step
-// });
-
-// Given('that I navigated to the position {string}', async function(location){
-//   // TODO: implement step
-// });
 
 Given('I see the initial picture of the location {string}', async function(location){
   const currentLocation = await getWhereIAm( this );
   expect( currentLocation ).to.equal( location );
 });
 
-// When('I wait until the event {string} occurs', async function(event_message){
-//   // TODO: implement step
-// });
-
-// Then('I should see the text {string}', async function(event_text){
-//   // TODO: implement step
-// });
-
-// Then('I should see the button {string}', async function(button_text){
-//   // TODO: implement step
-// });
-
-// Given('I wait until the event {string} occurs', async function(event_message){
-//   // TODO: implement step
-// });
-
-// Given('I should see the text {string}', async function(event_text){
-//   // TODO: implement step
-// });
-
-// When('I repeatedly choose {string} until the event {string} occurs or the game ends', async function(event_message, a){
-//   // TODO: implement step
-// });
 
 Then('the event {string} should not occur again', async function(event_message){
   const eventOccurred = await checkIfDescriptionContainsString( this, event_message, true );

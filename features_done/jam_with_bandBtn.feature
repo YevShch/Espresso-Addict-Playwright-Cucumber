@@ -1,7 +1,8 @@
 Feature: "Jam with the band" button functionality
 
   Background: Waiting for the event "jam with the band"
-    Given I am at the location "A guitarist and sax player"
+    Given that I have started the game by navigating to "http://localhost:3000"
+    And that I navigated to the position "at the concert"
     And I should not see the "Jam with the band" button
     When I wait until the event "jam with us?" occurs
 
