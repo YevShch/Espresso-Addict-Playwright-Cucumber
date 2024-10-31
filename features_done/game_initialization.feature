@@ -2,7 +2,7 @@ Feature: Game initialization
  
 Background: start the game
     Given that I have started the game by navigating to "http://localhost:3000"
-    And I should be at the location "outside the Cloud Forest Cafe"
+    And that my position is "outside the cafe"
 
   Scenario: Verify initial scoreboard values
     Then the value of my "Health" is 50

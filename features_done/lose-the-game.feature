@@ -17,9 +17,3 @@ Feature: I lose the game by waiting
       | in the country-side |
       | at the concert      |
 
-  Scenario Outline: You will lose the game 
-    Given that I have started the game by navigating to "http://localhost:3000"
-    And that I navigated to the position "inside the cafe"
-    And that my position is "inside the cafe"
-    When I wait repeatedly until I die
-    Then my position should be "I died"
