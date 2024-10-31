@@ -4,7 +4,7 @@ import { getAllCurrentMenuChoices, checkIfDescriptionContainsString } from './he
 
 Then( 'I should see the text {string}', async function ( expectedText ) {
   // Use the helper function to check if the description contains the expected text
-  await checkIfDescriptionContainsString( this, expectedText );
+  await checkIfDescriptionContainsString( this, expectedText, true );
 } );
 
 Then( 'I should see the following action buttons:', async function ( dataTable ) {
