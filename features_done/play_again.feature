@@ -15,7 +15,7 @@ Feature: "Play again" button functionality
 
   Scenario: Verify "Play again" button functionality after player wins a game
     Given that I have started the game by navigating to "http://localhost:3000"
-    Given that I navigated to the position "in a crowded bar"
+    And that I navigated to the position "in a crowded bar"
     And I wait until the event "a can of beer for free" occurs
     And that I navigated to the position "at the concert"
     And I wait until the event "jam with us?" occurs

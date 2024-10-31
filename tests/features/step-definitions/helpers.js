@@ -62,7 +62,7 @@ export async function navigateTo(world, to) {
   }
   // we navigate to outside the cafe first and then to
   // where we want to be (outside the cafe is like a bus hub)
-  let from = await getWhereIAm(world);
+  let from = await getWhereIAm( world ); 
   // if I am dead then restart
   if (from === 'I died') {
     let menuChoiceElement = await getMenuChoiceElement(world, 'Play again');
