@@ -4,4 +4,4 @@ export const headless = false;
 export const timeout = 60000;
 // to run in 'slow motion' increase this time
 // and to run at maximal speed keep at 0
-export const sleepBetweenSteps = 100;
+export const sleepBetweenSteps = 1000;
