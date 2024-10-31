@@ -19,6 +19,7 @@ export const page = await browser.newPage();
 class CustomWorld {
   constructor() {
     this.page = page;
+    this.scores = {};
   }
 
   sleep(ms) {
