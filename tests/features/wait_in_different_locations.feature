@@ -1,4 +1,4 @@
-Feature: Healt scoring 
+Feature: Wait in different locations
 
   Scenario Outline: Health decreases based on location when the player waits
     Given that I have started the game by navigating to "http://localhost:3000"
