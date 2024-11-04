@@ -15,5 +15,5 @@ Feature: Wait in different locations
       | on an empty street            | 50             | 2           | 45              |
       | in a crowded bar              | 50             | 2           | 47              |
       | in the country-side           | 50             | 2           | 45              |
-      |at the concert                 | 50             | 1           | 45 or 40        |
+      | at the concert                | 50             | 1           | 45 or 40        |
 

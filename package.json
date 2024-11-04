@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "cucumber-js tests/features --import tests/features/support --import tests/features/step-definitions --format json:tests/results/test-result.json --format @qavajs/console-formatter --fail-fast",
+    "test": "cucumber-js tests/features --import tests/features/support --import tests/features/step-definitions --format json:tests/results/test-result.json --format @qavajs/console-formatter",
     "test-chromium": "cucumber-js tests/features --import tests/features/support chromium --import tests/features/step-definitions --format json:tests/results/test-result.json --format @qavajs/console-formatter --fail-fast",
     "test-firefox": "cucumber-js tests/features --import tests/features/support firefox --import tests/features/step-definitions --format json:tests/results/test-result.json --format @qavajs/console-formatter --fail-fast",
     "test-webkit": "cucumber-js tests/features --import tests/features/support webkit --import tests/features/step-definitions --format json:tests/results/test-result.json --format @qavajs/console-formatter --fail-fast",
