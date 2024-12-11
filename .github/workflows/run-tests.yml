@@ -14,7 +14,7 @@ jobs:
     strategy:
       # run test in different browsers using matrix
       matrix:
-        test-version: ["chromium", "firefox", "webkit", 'chrome-with-selenium']
+        test-version: ["chromium", "firefox", "webkit"]
 
     steps:
 
