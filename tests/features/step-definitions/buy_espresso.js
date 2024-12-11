@@ -1,10 +1,10 @@
 import { Given, When, Then, world } from '@cucumber/cucumber';
 import { expect } from 'chai';
-import { startLocation, getValueOfScores, getMenuChoiceElement } from './helpers.js';
+import { getValueOfScores, getMenuChoiceElement } from './helpers.js';
 
-Given( 'I am at the location {string}', async function ( location ) {
-  await startLocation( this, location );
-} );
+// Given( 'I am at the location {string}', async function ( location ) {
+//   await startLocation( this, location );
+// } );
 
 Given('the value of my {string} is {float}', async function(sectionName, count){
   expect( await getValueOfScores( this, sectionName ) ).to.equal( count );

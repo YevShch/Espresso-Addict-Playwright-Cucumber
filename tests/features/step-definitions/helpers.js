@@ -134,61 +134,6 @@ export async function cheatIfNeeded(world) {
   }
 }
 
-export async function startLocation ( world, location ) {
-  try {
-    await world.gotoUrl( 'http://localhost:3000' );
-    console.log( `Loading game at: http://localhost:3000` );
-
-    switch ( location ) {
-      case 'outside the Cloud Forest Cafe':
-        // No actions required for this case
-        break;
-
-      case 'in the Cloud Forest Cafe':
-        let menuChoiceElement = await getMenuChoiceElement( world, 'Enter the cafe' );
-        await menuChoiceElement.waitFor( { state: 'visible', timeout: 5000 } );
-        await menuChoiceElement.click();
-        break;
-
-      case 'on an empty street':
-        let menuChoiceElement1 = await getMenuChoiceElement( world, 'Go north' );
-        await menuChoiceElement1.waitFor( { state: 'visible', timeout: 5000 } );
-        await menuChoiceElement1.click();
-        break;
-
-      case 'in a crowded bar':
-        let menuChoiceElement2 = await getMenuChoiceElement( world, 'Go north' );
-        await menuChoiceElement2.waitFor( { state: 'visible', timeout: 5000 } );
-        await menuChoiceElement2.click();
-        let menuChoiceElement3 = await getMenuChoiceElement( world, 'Go east' );
-        await menuChoiceElement3.waitFor( { state: 'visible', timeout: 5000 } );
-        await menuChoiceElement3.click();
-        break;
-
-      case 'in the countryside':
-        let menuChoiceElement4 = await getMenuChoiceElement( world, 'Go south' );
-        await menuChoiceElement4.waitFor( { state: 'visible', timeout: 5000 } );
-        await menuChoiceElement4.click();
-        break;
-
-      case 'A guitarist and sax player':
-        let menuChoiceElement5 = await getMenuChoiceElement( world, 'Go south' );
-        await menuChoiceElement5.waitFor( { state: 'visible', timeout: 5000 } );
-        await menuChoiceElement5.click();
-        let menuChoiceElement6 = await getMenuChoiceElement( world, 'Go west' );
-        await menuChoiceElement6.waitFor( { state: 'visible', timeout: 5000 } );
-        await menuChoiceElement6.click();
-        break;
-
-      default:
-        throw new Error( `Unknown location: ${ location }` );
-    }
-  } catch ( error ) {
-    console.error( `Error while starting location ${ location }: ${ error.message }` );
-    throw error;
-  }
-}
-
 
 export const sectionClassMap = {
   'health': 'health',
