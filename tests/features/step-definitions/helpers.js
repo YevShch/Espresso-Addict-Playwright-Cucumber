@@ -116,7 +116,7 @@ export async function cheatIfNeeded(world) {
   // so that the win game test never fails
   // (hard to write if blackbox testing - sneak peak on code neeeded
   //  or discussion with developer)
-  if (world.currentFeature?.name === 'Win the game') {
+  // if (world.currentFeature?.name === 'Win the game') {
     let { cheated, health } = await world.runScriptInBrowser(() => {
       let cheated = false;
       if (player.status.health < 10) {
@@ -131,7 +131,7 @@ export async function cheatIfNeeded(world) {
       world.currentHealth = health;
       console.log('\n\nCheating and added +10 in health!\n\n');
     }
-  }
+  // }
 }
 
 

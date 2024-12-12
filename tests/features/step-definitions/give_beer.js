@@ -1,17 +1,39 @@
 import { When, Then } from '@cucumber/cucumber';
-import { getValueOfScores, checkIfDescriptionContainsString, getMenuChoiceElement, cheatIfNeeded } from './helpers.js'
+import { getValueOfScores, checkIfDescriptionContainsString, getMenuChoiceElement, getAllCurrentMenuChoices, cheatIfNeeded } from './helpers.js'
 import { expect } from 'chai';
 
 
-When('I wait until the event {string} occurs', async function(event_text){
-  while ( await checkIfDescriptionContainsString( this, event_text, true ) === false ) {
+// When('I wait until the event {string} occurs', async function(event_text){
+//   while ( await checkIfDescriptionContainsString( this, event_text, true ) === false ) {
 
+//     await cheatIfNeeded( this );
+//     let menuChoiceElement = await getMenuChoiceElement( this, 'Wait' );
+//     // console.log( "Menu choice element found:", menuChoiceElement );
+//     await menuChoiceElement.click();
+//   }
+// });
+
+When( 'I wait until the event {string} occurs', async function ( event_text ) {
+  while ( await checkIfDescriptionContainsString( this, event_text, true ) === false ) {
+   
     await cheatIfNeeded( this );
-    let menuChoiceElement = await getMenuChoiceElement( this, 'Wait' );
-    // console.log( "Menu choice element found:", menuChoiceElement );
+
+    let { choiceElements, choices } = await getAllCurrentMenuChoices( this );
+
+    let index = choices.indexOf( 'Wait' );
+    if ( index === -1 ) {
+      console.log( `"Wait" not found. Available choices: ${ choices.join( ', ' ) }` );
+      throw new Error( `"Wait" not found. Available choices: ${ choices.join( ', ' ) }` );
+    }
+
+    let menuChoiceElement = choiceElements[ index ];
+    if ( !menuChoiceElement ) {
+      throw new Error( 'Menu choice "Wait" is not clickable.' );
+    }
     await menuChoiceElement.click();
   }
-});
+} );
+
 
 
 Then( 'the value of my {string} should increase by {float}', async function ( sectionName, count ) {
